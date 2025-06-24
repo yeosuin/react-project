@@ -1,3 +1,5 @@
+// reslove 성공
+// reject 실패
 function add10(num) {
   const promise = new Promise((resolve, reject) => {
     // 비동기 작업 실행하는 함수
@@ -13,6 +15,7 @@ function add10(num) {
 
   return promise;
 }
+// then은 미동기 코드를 작성하는데 사용되는 Promise의 메서드
 
 add10(0).then((result) => {
   console.log(result);
