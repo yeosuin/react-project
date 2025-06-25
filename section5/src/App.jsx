@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header.jsx';
-import Main from './components/Mian.jsx';
+import Main from './components/Main.jsx';
 import Footer from './components/Footer.jsx';
 
 // 컴포넌트 함수명은 반드시 첫 글자가 대문자여야 함
