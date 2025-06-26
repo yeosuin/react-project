@@ -6,6 +6,7 @@ import Button from './components/Button.jsx';
 import {use, useState} from 'react';
 import Bulb from './components/Bulb.jsx';
 import Counter from './components/Counter.jsx';
+import Register from './components/Register.jsx';
 
 // 컴포넌트 함수명은 반드시 첫 글자가 대문자여야 함
 // 여기서 App은 root 컴포넌트라고 할 수 있음 모든 컴포넌트의 조상 역할임
@@ -39,14 +40,15 @@ function App() { // 부모 컴포넌트
 
   return (
     <>
-        <Bulb />
-        {/*  <Button {...buttonProps}/>
+        {/*<Bulb />
+          <Button {...buttonProps}/>
       <Button text={'카페'}/>
       <Button text={'블로그'}>
         <Header/>
         <div>자식 요소</div>
-      </Button>*/}
-        <Counter/>
+      </Button>
+        <Counter/>*/}
+      <Register/>
     </>
   )
 }
