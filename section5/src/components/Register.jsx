@@ -1,3 +1,5 @@
+import {useState, useRef} from 'react';
+
 // 간단한 회원가입 폼
 // 1. 이름
 // 2. 생년월일
@@ -27,18 +29,18 @@ const Register = () => {
 */
 
   const [input, setInput] = useState({
-    name: '',
-    birth: '',
-    country: '',
-    bio: '',
-  })
+    name: '', birth: '', country: '', bio: '',
+  });
+
+  const countRef = useRef(0);
 
   const onChang = (e) => {
+    countRef.current++;
+    console.log(countRef.current);
     setInput({
-      ...input,
-      [e.target.name] : e.target.value,
-    })
-  }
+      ...input, [e.target.name]: e.target.value,
+    });
+  };
 
   /*const onChangeName = (e) => {
     setInput({
@@ -68,32 +70,40 @@ const Register = () => {
     })
   }*/
 
-  return (
-      <div>
+  const inputRef = useRef('');
+
+  const onSubmit = () => {
+    if (input.name === '') {
+      //이름을 입력하는 DOM 요소 포커스
+      inputRef.current.focus();
+    }
+  };
+
+  return (<div>
+
+
         <div>
-          <input name='name' value={input.name} onChange={onChang} placeholder={'이름'}/>
+          <input ref={inputRef} name="name" value={input.name}
+                 onChange={onChang} placeholder={'이름'}/>
         </div>
         <div>
-          <input name='birth' value={input.birth} type="date" onChange={onChang}/>
+          <input name="birth" value={input.birth} type="date"
+                 onChange={onChang}/>
         </div>
         <div>
-          <select name='country' value={input.country} onChange={onChang}>
-            <option value=''></option>
-            <option value='kr'>한국</option>
-            <option value='us'>미국</option>
-            <option value='uk'>영국</option>
+          <select name="country" value={input.country} onChange={onChang}>
+            <option value=""></option>
+            <option value="kr">한국</option>
+            <option value="us">미국</option>
+            <option value="uk">영국</option>
           </select>
         </div>
 
         <div>
-          <textarea name='bio' value={input.bio} onChange={onChang} />
+          <textarea name="bio" value={input.bio} onChange={onChang}/>
         </div>
-
-      </div>
-  )
-      ;
+        <button onClick={onSubmit}>제출</button>
+      </div>);
 };
-
-import {use, useState} from 'react';
 
 export default Register;
