@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/Header.jsx';
+import Editor from './components/Editor.jsx';
+import List from './components/List.jsx';
+import TodoItem from './components/TodoItem.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      Todolist
-    </>
+    <div className='App'>
+      <Header/>
+      <Editor/>
+      <List/>
+    </div>
   )
 }
 
