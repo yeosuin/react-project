@@ -73,7 +73,7 @@ function App() {
         <Exam/>
         {/*<Header/>
         <Editor onCreate={onCreate}/>
-        <List todos={todos} onUpdate={onUpdate}/>
+        <List todos={todos} onUpdate={onUpdate}/>*/}
       </div>
   );
 }
