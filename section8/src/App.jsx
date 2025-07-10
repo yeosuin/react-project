@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Editor from './components/Editor.jsx';
 import List from './components/List.jsx';
 import TodoItem from './components/TodoItem.jsx';
+import Exam from './components/Exam.jsx';
 
 const mockData = [
   {
@@ -69,9 +70,10 @@ function App() {
 
   return (
       <div className="App">
-        <Header/>
+        <Exam/>
+        {/*<Header/>
         <Editor onCreate={onCreate}/>
-        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete}/>
+        <List todos={todos} onUpdate={onUpdate}/>
       </div>
   );
 }
